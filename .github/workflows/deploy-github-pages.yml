@@ -15,6 +15,10 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 
+defaults:
+  run:
+    working-directory: my-app
+
 jobs:
   build:
     environment:
@@ -30,8 +34,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
             node-version: 18
-      - name: Move to my-app
-        run: cd my-app
       - name: Install dependencies
         run: npm install
       - name: Build
