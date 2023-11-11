@@ -7,5 +7,11 @@ export default defineConfig({
   server: {
     host: true
   },
-  base: '/practice_github_actions/'
+
+  base: '/practice_github_actions/',
+  build: {
+    rollupOptions: {
+      external: ['**/*.test.ts', '**/*.test.tsx']
+    }
+  }
 })
