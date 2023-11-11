@@ -39,7 +39,7 @@ jobs:
       - name: Build
         run: npm ci && npm run build
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v3
         with:
           name: dist
           path: './my-app/dist'
