@@ -30,16 +30,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
             node-version: 18
+      - name: Move to my-app
+        run: cd my-app
       - name: Install dependencies
         run: npm install
       - name: Build
         run: npm ci && npm run build
         env:
-          PUBLIC_URL: /practice_github_actions/my-app
+          PUBLIC_URL: /practice_github_actions
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: './my-app/build'
+          path: './build'
 
   deploy:
     environment:
